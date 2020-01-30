@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Introduction</title>
+    <link>https://pencroff.com/</link>
+    <description>Recent content on Introduction</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://pencroff.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>MEAN Buildup</title>
+      <link>https://pencroff.com/projects/097-mean-buildup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://pencroff.com/projects/097-mean-buildup/</guid>
+      <description>I mentored Angular BuildUp in Dublin. Attendees did some training with AngularJs. I did an implementation of back-end for MEAN stack. More details about implementation you could find in my repo. Implementation base on Express with token authorization for private API and no authorization for public API. I developed api which recognizes name of the model as an url parameter and then picks available repository from Unit of work. This was done for simplicity of declaration any CRUD actions for any new model.</description>
+    </item>
+    
+    <item>
+      <title>Kea config</title>
+      <link>https://pencroff.com/projects/098-kea-config/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://pencroff.com/projects/098-kea-config/</guid>
+      <description>Configuration manager for Node.js applications with perfect performance and without dependencies. Main feature of this configuration manager is merging configuration files depending on Node.js environment, it supports references to other keys and using templates with objects for complex string values.
+ GitHub Lightning talk Presentation  </description>
+    </item>
+    
+    <item>
+      <title>Moa.js</title>
+      <link>https://pencroff.com/projects/099-moa-js/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://pencroff.com/projects/099-moa-js/</guid>
+      <description>Library for declaration object inheritance, mixins, static methods / properties / mixins, etc. in ES5
+ GitHub Docs Class implementation Benchmark  </description>
+    </item>
+    
+    <item>
+      <title>Dapper-DAL</title>
+      <link>https://pencroff.com/projects/100-dapper-dal/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://pencroff.com/projects/100-dapper-dal/</guid>
+      <description>Data access layer with Dapper as wrapper IDbConnection GitHub.
+Light and quick implementation of data Repository pattern</description>
+    </item>
+    
+  </channel>
+</rss>
