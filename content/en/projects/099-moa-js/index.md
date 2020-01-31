@@ -9,6 +9,6 @@ resources:
 
 Library for declaration object inheritance, mixins, static methods / properties / mixins, etc. in **ES5**
 
-* [GitHub](https://github.com/Pencroff/MoaJs)
-* [Docs](http://pencroff.github.io/MoaJs/)
-* Class implementation [Benchmark](https://jsperf.com/moo-resig-ender-my/31)
+* [GitHub](//github.com/Pencroff/MoaJs)
+* [Docs](//pencroff.github.io/MoaJs/)
+* Class implementation [Benchmark](//jsperf.com/moo-resig-ender-my/31)

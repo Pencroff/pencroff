@@ -11,6 +11,6 @@ Configuration manager for Node.js applications with perfect performance and with
 Main feature of this configuration manager is merging configuration files depending on Node.js environment,
 it supports references to other keys and using templates with objects for complex string values.
 
-* [GitHub](https://github.com/Pencroff/kea-config)
-* [Lightning talk](https://www.youtube.com/watch?v=P6nTr5T8GVI)
-* [Presentation](http://slides.com/sergiidaniloff/deck/fullscreen#/)
+* [GitHub](//github.com/Pencroff/kea-config)
+* [Lightning talk](//www.youtube.com/watch?v=P6nTr5T8GVI)
+* [Presentation](//slides.com/sergiidaniloff/deck/fullscreen#/)

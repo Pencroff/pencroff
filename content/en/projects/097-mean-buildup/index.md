@@ -17,4 +17,4 @@ available repository from Unit of work. This was done for simplicity of
 declaration any CRUD actions for any new model. For data tier was
 used js-data library, as a universal ORM / ODM.
 
-[Github repo](https://github.com/Pencroff/mean-buildup)
+[Github repo](//github.com/Pencroff/mean-buildup)

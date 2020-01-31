@@ -87,7 +87,7 @@ DefaultContentLanguage           = "en"                    # Default language fo
         title            = "Introduction"
         [languages.en.params]
             description  = "Sergey's Danilov personal page. Engineer and problem solver."   # Max 160 characters show in search results
-             footerText   = "Thank you. Site generetad by Hugo, please check my [GitHub](https://github.com/Pencroff) for code quality."                      # Text to override default footer text (markdown allowed)
+             footerText   = "Thank you. Site generetad by Hugo, please check my [GitHub](https://github.com/Pencroff) for code examples 😊"                      # Text to override default footer text (markdown allowed)
 
 #    [languages.es]
 #        languageName     = "Español"
