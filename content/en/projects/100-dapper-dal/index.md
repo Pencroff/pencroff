@@ -7,6 +7,6 @@ resources:
           weight: -100
 ---
 
-Data access layer with Dapper as wrapper IDbConnection [GitHub](https://github.com/Pencroff/Dapper-DAL).
+Data access layer with Dapper as wrapper IDbConnection [GitHub](//github.com/Pencroff/Dapper-DAL).
 
 Light and quick implementation of data Repository pattern
