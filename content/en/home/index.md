@@ -3,5 +3,5 @@ title: "Hi, I'm Sergey"
 headless: true
 ---
 
-Turning ideas into reality.
+I am turning ideas into reality.
 
