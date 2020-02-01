@@ -9,6 +9,6 @@ I always educate myself in using simple and elegant solutions for difficult task
 I am master in wider range of computer languages (_JavaScript_ /_Typescript_, _Python_ or _.NET_),
 software architecture, OOP, functional or reactive concepts.   
 Always eager to improve and learn more, using all my maturity and engineering experience to surpass all problems.
-Currently I am improving my experience in Machine Learning area (NLP).
+Currently I am improving my experience in Machine Learning area.
 
-Please check my [GitHub account](https://github.com/Pencroff) for more details or check [Projects](/#projects)area
+Please check my [GitHub account](https://github.com/Pencroff) for more details or check my [Projects](/#projects).
