@@ -38,7 +38,7 @@ It&amp;rsquo;s 10x or even 18x faster for some cases - link
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://pencroff.com/projects/50-perf-js/</guid>
-      <description>Compare performance different JavaScript approaches in your browser.
+      <description>Compare performance different JavaScript approaches in your browser. Developed with Angular 4 (with example of localizations English / Ukrainian). Since that time I participated in number of migrations from AngularJs to Angular 2+ and from CanJs to React (hook based app)
 DEMO
  Github repo Non framework experiment  </description>
     </item>
