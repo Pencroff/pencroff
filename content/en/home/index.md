@@ -3,5 +3,5 @@ title: "Hi, I'm Sergey"
 headless: true
 ---
 
-Engineer, problem solver.
+I am turning ideas into reality.
 
