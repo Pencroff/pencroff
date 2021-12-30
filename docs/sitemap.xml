@@ -1,45 +1,28 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://pencroff.com/projects/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pencroff.com/projects/10-ts-algorithms/</loc>
-  </url>
-  
-  <url>
-    <loc>https://pencroff.com/projects/25-typeorm-better-sqlite/</loc>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://pencroff.com/projects/095-typeorm-better-sqlite/</loc>
+  </url><url>
     <loc>https://pencroff.com/projects/50-perf-js/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pencroff.com/projects/097-mean-buildup/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pencroff.com/projects/098-kea-config/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pencroff.com/projects/099-moa-js/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pencroff.com/projects/100-dapper-dal/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://pencroff.com/</loc>
-  </url>
-  
-  <url>
+    <lastmod>2021-12-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://pencroff.com/categories/</loc>
+  </url><url>
     <loc>https://pencroff.com/tags/</loc>
   </url>
-  
 </urlset>

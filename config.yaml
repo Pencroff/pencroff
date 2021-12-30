@@ -1,0 +1,10 @@
+baseURL: "https://pencroff.com/" # Your domain name. Must end with "/"
+languageCode: "en-us"
+title: "Sergey Daniloff (@Pencroff) site"
+#theme: "pencroff-theme"
+publishDir: "docs"
+DefaultContentLanguage: "en"                    # Default language for multilingual sites
+googleAnalytics: "UA-155361709-3"                       # https://gohugo.io/templates/internal/#google-analytics
+
+build:
+  writeStats: true
