@@ -1,7 +1,9 @@
 ---
-author: Sergey Daniloff
-title: Hi, and welcome.
-date: 2021-12-30
+title: Hi. I'm Sergey
+subtitle: Welcome on my personal page
+NoHeader: true
 ---
 
-Live long and code.
+Trust me I am an engineer.
+
+:)

@@ -1,8 +1,7 @@
 {
   "name": "pencroff",
   "version": "1.0.0",
-  "description": "Hi. I am Sergey.",
-  "main": "postcss.config.js",
+  "description": "Personal Pencroff's site",
   "scripts": {
     "tailwindcss": "tailwindcss --help",
     "dev-site": "hugo serve --gc",

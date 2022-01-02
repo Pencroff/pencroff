@@ -1,15 +1,17 @@
 /* Tailwind base - put variables under: tailwind.config.js */
-@tailwind base;
+@import "tailwindcss/base";
 /* Tailwind component classes registered by plugins*/
-@tailwind components;
+@import "tailwindcss/components";
 /* Site Specific */
-@import "assets/css/site";
+@import "./custom-components.css";
 /* Tailwind's utility classes - generated based on config file */
-@tailwind utilities;
+@import "tailwindcss/utilities";
 
 /* Google fonts */
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=JetBrains+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Vollkorn:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=JetBrains+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Vollkorn:ital,wght@0,400;0,700;1,400;1,700&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&family=Vollkorn:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 /*font-family: 'Comfortaa', cursive;*/
 /*font-family: 'JetBrains Mono', monospace;*/
 /*font-family: 'Vollkorn', serif;*/
+/*'Montserrat', sans-serif;*/

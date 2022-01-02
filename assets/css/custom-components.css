@@ -1,0 +1,9 @@
+.hero {
+  min-height: calc(100vh - 1rem);
+}
+
+@media screen(sm) {
+  .hero {
+    min-height: calc(100vh - 4rem);
+  }
+}
