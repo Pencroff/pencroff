@@ -1,8 +1,10 @@
-
-<section id="quick-links" class="py-16">
+<div id="to-page-top"></div>
+<section class="py-16">
   {{ $project := .Site.GetPage "/projects" }}
   {{ $projectsCount := len ($project.Pages) }}
-  {{ $sum := $projectsCount }}
+  {{ $talk := .Site.GetPage "/talks" }}
+  {{ $talkCount := len ($talk.Pages) }}
+  {{ $sum := add $projectsCount $talkCount }}
   {{ $hasQuickLinks := gt $sum 0 }}
 
   {{- if $hasQuickLinks }}
@@ -11,7 +13,11 @@
   <div class="flex flex-row justify-center items-center text-stone-500">
 
     {{- if gt $projectsCount 0 }}
-    <a class="sm:text-2xl hover:text-blue-400" href="#projects">{{ $project.Title }}</a>
+    <a class="sm:text-2xl hover:text-blue-400 m-4 sm:m-8" href="#projects">{{ $project.Title }}</a>
+    {{ end -}}
+
+    {{- if gt $talkCount 0 }}
+    <a class="sm:text-2xl hover:text-blue-400 m-4 sm:m-8" href="#talks">{{ $talk.Title }}</a>
     {{ end -}}
 
   </div>
