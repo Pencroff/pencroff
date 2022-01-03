@@ -1,6 +1,6 @@
 ---
 title: Hi. I'm Sergey
-subtitle: Welcome on my personal page
+subtitle: Welcome to my personal page
 NoHeader: true
 ---
 

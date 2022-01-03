@@ -1,0 +1,21 @@
+
+<section id="quick-links" class="py-16">
+  {{ $project := .Site.GetPage "/projects" }}
+  {{ $projectsCount := len ($project.Pages) }}
+  {{ $sum := $projectsCount }}
+  {{ $hasQuickLinks := gt $sum 0 }}
+
+  {{- if $hasQuickLinks }}
+  <hr class="mb-4 sm:mb-8">
+
+  <div class="flex flex-row justify-center items-center text-stone-500">
+
+    {{- if gt $projectsCount 0 }}
+    <a class="sm:text-2xl hover:text-blue-400" href="#projects">{{ $project.Title }}</a>
+    {{ end -}}
+
+  </div>
+
+  <hr class="mt-4 sm:mt-8">
+  {{ end -}}
+</section>

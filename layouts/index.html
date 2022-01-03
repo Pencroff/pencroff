@@ -16,7 +16,7 @@
                 <p class="font-mono text-stone-500 sm:text-3xl">Trust me I am an engineer.</p>
             </div>
         </div>
-        <div class="container mx-auto flex flex-col py-16 justify-center items-center text-stone-300 transition-opacity ease-in-out">
+        <div class="container mx-auto flex flex-col py-4 justify-center items-center text-stone-300 transition-opacity ease-in-out">
             <svg xmlns="http://www.w3.org/2000/svg" class="icon-tabler-mouse" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                 <rect x="6" y="3" width="12" height="18" rx="4"></rect>
@@ -30,12 +30,9 @@
         </div>
     </div>
 
-    <h3>Projects</h3>
-    {{ with .Site.GetPage "/projects" }}
-    {{ range first 2 (sort .Pages "Params.weight") }}
-    <h1>{{ .Title }}</h1>
-    {{ end }}
-    {{ end }}
+    {{- partial "home/quick-links.html" . -}}
+    {{- partial "home/projects.html" . -}}
+
 
 
 
