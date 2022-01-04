@@ -20,6 +20,7 @@
 ### Slogans
 https://www.quora.com/What-are-some-best-T-shirt-slogans-for-coders
 https://betterprogramming.pub/101-funny-programmer-quotes-76c7f335b92d#127e
+https://www.netmeister.org/blog/software-engineering-laws.html
 
 ## ToDo
 
