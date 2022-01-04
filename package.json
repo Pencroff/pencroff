@@ -1,0 +1,30 @@
+{
+  "name": "pencroff",
+  "version": "1.0.0",
+  "description": "Personal Pencroff's site",
+  "scripts": {
+    "tailwindcss": "tailwindcss --help",
+    "srv": "serv --port=3333 --path=./docs",
+    "dev-site": "hugo serve --gc",
+    "dev-css": "npm run env NODE_ENV=development && tailwindcss --postcss ./postcss.config.js --input ./assets/css/styles.css --output ./assets/main.css --watch",
+    "build-site": "hugo --minify --gc",
+    "build-css": "npm run env NODE_ENV=production && tailwindcss --postcss ./postcss.config.js --input ./assets/css/styles.css --output ./assets/main.css --minify"
+  },
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^4.0.3",
+    "@tailwindcss/aspect-ratio": "^0.4.0",
+    "@tailwindcss/typography": "^0.5.0",
+    "autoprefixer": "^10.2.5",
+    "postcss": "^8.2.15",
+    "postcss-cli": "^8.3.1",
+    "postcss-import": "^14.0.2",
+    "serv": "^0.2.4",
+    "tailwindcss": "^3.0.8"
+  },
+  "browserslist": [
+    "last 1 version",
+    "> 1%",
+    "maintained node versions",
+    "not dead"
+  ]
+}

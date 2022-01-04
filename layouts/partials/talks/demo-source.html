@@ -1,0 +1,25 @@
+{{ $isDemo := isset .Params "demourl" }}
+{{ $isSource := isset .Params "sourcecodeurl" }}
+{{- if or $isDemo $isSource }}
+<div class="not-prose">
+    <div class="flex flex-row justify-around items-center my-4 sm:my-8 w-full">
+        {{- if $isDemo }}
+        <a href="{{.Params.DemoUrl}}" target="_blank" class="w-1/4">
+            <button
+                    class="inline-flex justify-center items-center bg-lime-600 border-0 py-2 px-4 focus:outline-none hover:bg-lime-700 rounded text-base text-stone-50 w-full">
+                Demo
+            </button>
+        </a>
+        {{ end -}}
+        {{- if $isSource }}
+        <a href="{{.Params.SourceCodeUrl}}" target="_blank" class="w-1/4">
+            <button
+                    class="inline-flex justify-center items-center bg-sky-600 border-0 py-2 px-4 focus:outline-none hover:bg-sky-700 rounded text-base text-stone-50 w-full">
+                Source Code
+            </button>
+
+        </a>
+        {{ end -}}
+    </div>
+</div>
+{{ end -}}
