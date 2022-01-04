@@ -24,4 +24,11 @@ https://betterprogramming.pub/101-funny-programmer-quotes-76c7f335b92d#127e
 
 * [+] update `tailwindcss` to v3 - currently issue with jit
   * https://github.com/dirkolbrich/hugo-theme-tailwindcss-starter/issues/37
-* 
+* Check images
+* Blog
+  * Tags
+  * Categories?
+* Auto phrases re-type - web component
+* Dark theme support
+* Comments
+* Full text search

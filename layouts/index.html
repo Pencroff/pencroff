@@ -2,28 +2,35 @@
 <section>
     <div class="hero flex flex-col">
         <div class="flex-1 container mx-auto flex flex-col px-5 py-10 justify-center items-center text-stone-400">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-32 h-16 sm:h-32 mb-4 sm:mb-8 icon-code"
-                 width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                 stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                <polyline points="7 8 3 12 7 16"></polyline>
-                <polyline points="17 8 21 12 17 16"></polyline>
-                <line x1="14" y1="4" x2="10" y2="20"></line>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-32 h-16 sm:h-32 mb-4 sm:mb-8 atom-2" width="24" height="24"
+                 shape-rendering="geometricPrecision"
+                 viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                 stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <circle cx="12" cy="12" r="3"/>
+                <line x1="12" y1="21" x2="12" y2="21.01"/>
+                <line x1="3" y1="9" x2="3" y2="9.01"/>
+                <line x1="21" y1="9" x2="21" y2="9.01"/>
+                <path d="M8 20.1a9 9 0 0 1 -5 -7.1"/>
+                <path d="M16 20.1a9 9 0 0 0 5 -7.1"/>
+                <path d="M6.2 5a9 9 0 0 1 11.4 0"/>
             </svg>
             <div class="w-full md:w-2/3 flex flex-col items-center text-center text-stone-600">
                 <h1 class="font-sans text-3xl sm:text-5xl mb-4">{{ .Title }}</h1>
                 <h2 class="font-sans text-3xl sm:text-5xl mb-8">{{ .Params.Subtitle }}</h2>
-                {{ partial "social-links.html" (slice "text-blue-400" "text-stone-600" .) }}
+                {{ partial "social-links.html" (slice "text-sky-600" "hover:text-stone-700" .) }}
                 <p class="font-mono text-stone-500 sm:text-3xl mt-2 sm:mt-8">Trust me I am an engineer.</p>
             </div>
         </div>
         <div class="container mx-auto flex flex-col py-4 justify-center items-center text-stone-300 transition-opacity ease-in-out">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon-tabler-mouse" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon-tabler-mouse" width="24" height="24" viewBox="0 0 24 24"
+                 stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                 <rect x="6" y="3" width="12" height="18" rx="4"></rect>
                 <line x1="12" y1="7" x2="12" y2="11"></line>
             </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" class="chevrons-down" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <svg xmlns="http://www.w3.org/2000/svg" class="chevrons-down" width="24" height="24" viewBox="0 0 24 24"
+                 stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                 <polyline points="7 7 12 12 17 7"></polyline>
                 <polyline points="7 13 12 18 17 13"></polyline>
