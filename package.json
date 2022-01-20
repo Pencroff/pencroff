@@ -4,7 +4,7 @@
   "description": "Personal Pencroff's site",
   "scripts": {
     "tailwindcss": "tailwindcss --help",
-    "srv": "serve --port=3333 --path=./docs",
+    "srv": "serve --listen=3333 ./docs",
     "dev-site": "hugo serve --gc",
     "dev-css": "npm run env NODE_ENV=development && tailwindcss --postcss ./postcss.config.js --input ./assets/css/styles.css --output ./assets/main.css --watch",
     "build-site": "hugo --minify --gc",
