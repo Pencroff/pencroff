@@ -1,0 +1,14 @@
+{{ if .IsNamedParams }}
+<iframe src="{{ .Get "src" }}" title="{{.Page.Params.Title}}"
+        width="{{ .Get "width" }}" height="{{ .Get "height" }}"
+        loading="lazy"
+        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+{{ else }}
+<iframe src="{{.Get 0}}" title="{{.Page.Params.Title}}"
+        width="{{.Get 1}}" height="{{.Get 2}}"
+        loading="lazy"
+        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+{{ end }}
+

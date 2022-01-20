@@ -2,7 +2,7 @@
 title: "typeorm-better-sqlite3 driver"
 description: "Fast [better-sqlite3](//github.com/JoshuaWise/better-sqlite3) driver for [Typeorm](//typeorm.io/#/).
 Very useful for prototyping and experiments on local machine."
-weight: 101
+weight: 1010
 resources:
     - src: typeorm-sqlite-driver.png
       params:

@@ -1,7 +1,7 @@
 ---
 title: "Dapper-DAL"
 description: "Data access layer with Dapper as wrapper IDbConnection [GitHub](//github.com/Pencroff/Dapper-DAL)"
-weight: 100
+weight: 1000
 resources:
     - src: dapper.png
       params:

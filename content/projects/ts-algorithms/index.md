@@ -1,7 +1,7 @@
 ---
 title: "Algorithms and Data Structures in Typescript"
 description: "Variations of generic examples of different algorithms / data structures in Typescript."
-weight: 25
+weight: 250
 resources:
     - src: big-o.png
       params:

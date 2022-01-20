@@ -1,7 +1,7 @@
 ---
 title: "PerfJS"
 description: "Compare performance different JavaScript approaches in your browser."
-weight: 50
+weight: 500
 resources:
     - src: perf.jpg
       params:

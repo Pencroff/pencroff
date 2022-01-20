@@ -3,7 +3,7 @@ date: 2015-08-01
 title: "Angular 2.0 — first look"
 description: "New features of Angular 2.0"
 weight: 110
-VideoUrl: "//www.youtube.com/embed/XdgJKjwU0KA"
+VideoId: "XdgJKjwU0KA"
 SlideUrl: "//pencroff.github.io/presentations/pages/angular-2-0-first-look/"
 DemoUrl: "//pencroff.github.io/presentations/pages/angular-2-0-first-look/example/"
 SourceCodeUrl: "//github.com/Pencroff/angular-2-first-look"

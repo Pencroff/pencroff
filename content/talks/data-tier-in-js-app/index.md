@@ -3,7 +3,7 @@ date: 2015-12-01
 title: "Data tier in JS app"
 description: "Role of data tier in app"
 weight: 100
-VideoUrl: "//www.youtube.com/embed/QADmeHcft6I"
+VideoId: "QADmeHcft6I"
 SlideUrl: "//pencroff.github.io/presentations/pages/data-tier-in-js-app/build/target/"
 ---
 
