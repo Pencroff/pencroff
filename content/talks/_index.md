@@ -1,6 +1,6 @@
 ---
 title: "My talks"
-weight: 20
+weight: 30
 ---
 
 My talks about interesting topics (for me 😉).

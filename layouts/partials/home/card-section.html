@@ -1,0 +1,24 @@
+{{$allText := (index . 0)}}
+{{$link := (index . 1)}}
+{{$card := (index . 2)}}
+{{$ctx := (index . 3)}}
+{{$recent_num := (index . 4) | default 3}}
+
+{{$section := $ctx.Site.GetPage $link}}
+<section id="talks" class="flex flex-col justify-center items-center">
+    <h2 class="mb-4 text-2xl sm:text-3xl font-bold text-stone-900">{{$section.Title}}</h2>
+    <div class="flex flex-col sm:flex-row justify-center items-stretch mb-4 sm:mb-8 w-full">
+        {{- if (eq $link "/post") }}
+            {{- range first $recent_num (sort $section.Pages "Params.date" "desc") }}
+                {{- partial $card . -}}
+            {{ end -}}
+        {{ else }}
+            {{- range first $recent_num (sort $section.Pages "Params.weight") }}
+                {{- partial $card . -}}
+            {{ end -}}
+        {{ end -}}
+
+    </div>
+    <a class="mb-4 sm:mb-8 hover:text-sky-600" href="{{$link}}">{{$allText}}</a>
+    {{- partial "back-to-top.html" . -}}
+</section>

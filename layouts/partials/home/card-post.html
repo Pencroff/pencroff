@@ -1,0 +1,13 @@
+<section class="m-2 sm:m-4 p-2 sm:p-4 shadow-md flex flex-col justify-between items-start flex-1">
+    <h3 class="text-lg text-center text-blue-700 font-bold">{{ .Title }}</h3>
+    <div class="flex flex-row">
+        <div class="basis-1/2">
+            {{- partial "svg/calendar.svg" (dict "class" "text-red-500") -}}
+            {{.Params.Categories}}</div>
+        <div class="basis-1/2">{{.Params.date}}</div>
+    </div>
+
+    <p class="text-sm self-end mt-1 sm:mt-2">
+        <a href="{{ .Permalink }}" class="hover:text-sky-600">More details</a>
+    </p>
+</section>
