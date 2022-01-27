@@ -11,7 +11,7 @@ build:
 
 params:
   home:
-    recent_post_num: 3
+    recent_post_num: 4
     recent_project_num: 3
     recent_talk_num: 2
   links:

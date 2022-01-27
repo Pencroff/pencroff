@@ -12,25 +12,15 @@
             </div>
         </div>
         <div class="container mx-auto flex flex-col py-4 justify-center items-center text-stone-300 transition-opacity ease-in-out">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon-tabler-mouse" width="24" height="24" viewBox="0 0 24 24"
-                 stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                <rect x="6" y="3" width="12" height="18" rx="4"></rect>
-                <line x1="12" y1="7" x2="12" y2="11"></line>
-            </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" class="chevrons-down" width="24" height="24" viewBox="0 0 24 24"
-                 stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                <polyline points="7 7 12 12 17 7"></polyline>
-                <polyline points="7 13 12 18 17 13"></polyline>
-            </svg>
+            {{- partial "svg/mouse.svg" -}}
+            {{- partial "svg/chevrons-down.svg" -}}
         </div>
     </div>
 
     {{- partial "home/quick-links.html" . -}}
-    {{- partial "home/card-section.html" (slice "All posts" "/post" "home/card-post.html" . 4 "flex-wrap") -}}
-    {{- partial "home/card-section.html" (slice "All projects" "/projects" "home/card-project.html" .) -}}
-    {{- partial "home/card-section.html" (slice "All talks" "/talks" "home/card-talk.html" . 2) -}}
+    {{- partial "home/card-section.html" (slice "All posts" "/post" "home/card-post.html" . (.Site.Param "home.recent_post_num") "flex-wrap") -}}
+    {{- partial "home/card-section.html" (slice "All projects" "/projects" "home/card-project.html" . (.Site.Param "home.recent_project_num")) -}}
+    {{- partial "home/card-section.html" (slice "All talks" "/talks" "home/card-talk.html" . (.Site.Param "home.recent_talk_num")) -}}
 
 </section>
 
