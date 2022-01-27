@@ -28,7 +28,7 @@
     </div>
 
     {{- partial "home/quick-links.html" . -}}
-    {{- partial "home/card-section.html" (slice "All posts" "/post" "home/card-post.html" .) -}}
+    {{- partial "home/card-section.html" (slice "All posts" "/post" "home/card-post.html" . 4 "flex-wrap") -}}
     {{- partial "home/card-section.html" (slice "All projects" "/projects" "home/card-project.html" .) -}}
     {{- partial "home/card-section.html" (slice "All talks" "/talks" "home/card-talk.html" . 2) -}}
 
