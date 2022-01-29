@@ -9,7 +9,7 @@
 
 {{$section := $ctx.Site.GetPage $link}}
 <section id="{{$id}}" class="flex flex-col justify-center items-center">
-    <h2 class="mb-4 text-2xl sm:text-3xl font-bold text-stone-900 hover:text-stone-600 hover:underline">
+    <h2 class="mb-4 text-2xl sm:text-3xl font-bold text-stone-700 hover:underline">
         <a href="{{$link}}">{{$section.Title}}</a>
     </h2>
     <div class="flex flex-col sm:flex-row justify-center items-stretch mb-4 sm:mb-8 w-full {{ with $class }}{{ . }}{{ end }}">

@@ -1,6 +1,6 @@
 {{- $tags := .Site.Taxonomies.tags }}
 {{- if gt (len $tags) 0 }}
-    <div class="container mb-4 px-0 lg:px-4">
+    <div class="container mb-4 px-4 py-2 bg-orange-50 rounded border border-yellow-700">
         {{- partial "side/side_header.html" (
             dict
             "class" "text-yellow-700 border-yellow-700 border-b-2 text-xl uppercase font-bold"
