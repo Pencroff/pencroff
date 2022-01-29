@@ -8,8 +8,8 @@
         {{ end -}}
         <main class="flex-1 mx-4 md:mx-12 lg:mx-24 mt-4 sm:mt-16">
             {{ if in .Site.Params.has_side .Type  }}
-                <div class="flex flex-row flex-wrap">
-                    <div class="basis-full md:basis-main p-4">
+                <div class="flex flex-row flex-wrap md:flex-nowrap">
+                    <div class="basis-full md:basis-main">
                         {{- block "main" . }}{{- end }}
                     </div>
                     <div class="basis-full md:basis-side mt-4 md:mt-0 md:ml-8">

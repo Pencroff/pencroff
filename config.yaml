@@ -29,6 +29,6 @@ params:
       - tags
     category_counter: true
     tag_counter: false
-    recent_count: 10
+    recent_count: 5
     recent_date_format: "Jan 06"
 
