@@ -7,7 +7,18 @@
             {{- partial "header.html" . -}}
         {{ end -}}
         <main class="flex-1 mx-4 md:mx-12 lg:mx-24 mt-4 sm:mt-16">
-        {{- block "main" . }}{{- end }}
+            {{ if in .Site.Params.has_side .Type  }}
+                <div class="flex flex-row flex-wrap">
+                    <div class="basis-full md:basis-main p-4">
+                        {{- block "main" . }}{{- end }}
+                    </div>
+                    <div class="basis-full md:basis-side mt-4 md:mt-0 md:ml-8">
+                        {{ partial "side/all.html" . }}
+                    </div>
+                </div>
+            {{ else }}
+                {{- block "main" . }}{{- end }}
+            {{ end }}
         </main>
 {{/*        {{- partial "dev-parameters.html" . -}}*/}}
         {{- if not .Params.NoFooter }}
