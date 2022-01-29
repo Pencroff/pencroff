@@ -1,0 +1,20 @@
+{{- $tags := .Site.Taxonomies.tags }}
+{{- if gt (len $tags) 0 }}
+    <div class="container mb-4 px-0 lg:px-4">
+        {{- partial "side/side_header.html" (
+            dict
+            "class" "text-yellow-700 border-yellow-700 border-b-2 text-xl uppercase font-bold"
+            "icon" "svg/tag.svg"
+            "title" "Tags"
+        ) -}}
+        <div class="text-stone-700 text-base flex flex-row flex-wrap pt-1">
+            {{- range $name, $taxonomy := $tags }}
+                {{- with $.Site.GetPage (printf "/tags/%s" $name) }}
+                    <a class="py-0.5 px-2 mr-1 mt-1 hover:text-sky-100 hover:bg-yellow-700 border-yellow-700 border rounded-lg" href="{{ .RelPermalink }}" title="{{ .Title }}">
+                        {{- .Title -}}{{- if .Site.Params.side.tag_counter }} ({{ $taxonomy.Count }}){{ end -}}
+                    </a>
+                {{- end }}
+            {{- end }}
+        </div>
+    </div>
+{{- end }}

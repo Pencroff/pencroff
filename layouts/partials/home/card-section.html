@@ -1,14 +1,17 @@
-{{$allText := (index . 0)}}
-{{$link := (index . 1)}}
-{{$card := (index . 2)}}
-{{$ctx := (index . 3)}}
-{{$recent_num := (index . 4) | default 3}}
-{{$class := (index . 5)}}
+{{$id := (index . 0)}}
+{{$allText := (index . 1)}}
+{{$link := (index . 2)}}
+{{$card := (index . 3)}}
+{{$ctx := (index . 4)}}
+{{$recent_num := (index . 5) | default 3}}
+{{$class := (index . 6)}}
 
 
 {{$section := $ctx.Site.GetPage $link}}
-<section id="talks" class="flex flex-col justify-center items-center">
-    <h2 class="mb-4 text-2xl sm:text-3xl font-bold text-stone-900">{{$section.Title}}</h2>
+<section id="{{$id}}" class="flex flex-col justify-center items-center">
+    <h2 class="mb-4 text-2xl sm:text-3xl font-bold text-stone-900 hover:text-stone-600 hover:underline">
+        <a href="{{$link}}">{{$section.Title}}</a>
+    </h2>
     <div class="flex flex-col sm:flex-row justify-center items-stretch mb-4 sm:mb-8 w-full {{ with $class }}{{ . }}{{ end }}">
         {{- if (eq $link "/post") }}
             {{- range first $recent_num (sort $section.Pages "Params.date" "desc") }}

@@ -5,15 +5,14 @@
 </article>
 {{ range .Pages }}
     <article class="px-6 mx-auto mb-16 prose prose-stone prose-headings:text-blue-700 prose-p:font-serif justify-self-center sm:px-4 md:px-0 lg:prose-lg">
-        <h2>{{ .Title }}</h2>
-        <figure>
-            {{ with .Resources.ByType "image" }}
-            {{ range first 1 (sort . "Params.weight") }}
-            <img src="{{ .Permalink }}" alt ="{{ .Name }}">
-            {{ end }}
-            {{ end }}
-        </figure>
-        {{ .Description | markdownify }}
+        <h2 class="not-prose hover:text-stone-600 hover:underline">
+            <a href="{{ .Permalink }}" >{{ .Title }}</a>
+        </h2>
+        {{- partial "youtube.html" . -}}
+        <p>
+            {{ .Description | markdownify }}
+        </p>
+
         <p class="text-right">
             <a href="{{ .Permalink }}" class="hover:text-sky-600">More details</a>
         </p>

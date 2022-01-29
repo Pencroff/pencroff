@@ -11,7 +11,10 @@ module.exports = {
     extend: {
       flexBasis: {
         'half': '45%',
+        'main': '65%',
+        'side': '30%',
       }
+
     }
   },
   variants: {},

@@ -18,4 +18,13 @@ params:
     twitter: "//twitter.com/Pencroff"
     github: "//github.com/Pencroff"
     linkedin: "//www.linkedin.com/in/sergey-daniloff"
+  side:
+    order:
+      - categories
+      - recent
+      - tags
+    category_counter: true
+    tag_counter: false
+    recent_count: 10
+    recent_date_format: "Jan 06"
 

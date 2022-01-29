@@ -1,0 +1,23 @@
+{{- $categories := .Site.Taxonomies.categories }}
+{{- if gt (len $categories) 0 }}
+    <div class="container mb-4 px-0 lg:px-4">
+        {{- partial "side/side_header.html" (
+        dict
+        "class" "text-yellow-700 border-yellow-700 border-b-2 text-xl uppercase font-bold"
+        "icon" "svg/triangle-square-circle.svg"
+        "title" "Categories"
+        ) -}}
+        <ul class="text-stone-700 text-base">
+            {{- range $name, $taxonomy := $categories }}
+                {{- with $.Site.GetPage (printf "/categories/%s" $name) }}
+                    <li class="flex flex-row justify-between items-center hover:text-sky-600 py-2 border-stone-300 border-dashed border-b">
+                        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                        {{- if .Site.Params.side.category_counter }}&nbsp;
+                        <span class="text-xs rounded font-mono p-1 bg-yellow-700 text-stone-50">{{ $taxonomy.Count }}</span>
+                        {{ end -}}
+                    </li>
+                {{- end }}
+            {{- end }}
+        </ul>
+    </div>
+{{- end }}

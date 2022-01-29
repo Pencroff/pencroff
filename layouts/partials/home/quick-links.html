@@ -2,12 +2,12 @@
 <section class="py-16">
   {{ $post := .Site.GetPage "/post" }}
   {{ $postCount := len ($post.Pages) }}
-  {{ $project := .Site.GetPage "/projects" }}
+  {{ $project := .Site.GetPage "/project" }}
   {{ $projectsCount := len ($project.Pages) }}
-  {{ $talk := .Site.GetPage "/talks" }}
+  {{ $talk := .Site.GetPage "/talk" }}
   {{ $talkCount := len ($talk.Pages) }}
   {{ $sum := add $postCount $projectsCount }}
-  {{ $sum := add $sum $talkCount }}
+  {{ $sum = add $sum $talkCount }}
   {{ $hasQuickLinks := gt $sum 0 }}
 
   {{- if $hasQuickLinks }}
