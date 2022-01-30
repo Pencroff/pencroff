@@ -5,6 +5,8 @@ title: "Pencroff"
 publishDir: "docs"
 DefaultContentLanguage: "en"                    # Default language for multilingual sites
 googleAnalytics: "UA-155361709-3"               # https://gohugo.io/templates/internal/#google-analytics
+summaryLength: 50
+paginate: 5
 
 build:
   writeStats: true

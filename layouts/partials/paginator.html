@@ -1,0 +1,27 @@
+
+{{- $paginator := .paginator -}}
+{{- $iconCls := (dict "class" "w-10 h-10 p-1") -}}
+
+{{- if gt $paginator.TotalPages 1 }}
+    <nav class="flex flex-row justify-around items-center text-yellow-700 pt-8 pb-4">
+        {{- if $paginator.HasPrev }}
+            <a title="Previous page" href="{{ $paginator.Prev.URL }}"
+               class="rounded hover:bg-yellow-700 hover:text-stone-50">
+                {{- partial "svg/chevrons-left.svg" $iconCls -}}
+            </a>
+        {{ else }}
+            <span class="w-10"></span>
+        {{- end }}
+        <span class="rounded text-xl font-mono p-1 font-bold" title="pages">
+		{{- $paginator.PageNumber }}/{{ $paginator.TotalPages -}}
+	    </span>
+        {{- if $paginator.HasNext }}
+            <a title="Next page" href="{{ $paginator.Next.URL }}"
+               class="rounded hover:bg-yellow-700 hover:text-stone-50">
+                {{- partial "svg/chevrons-right.svg" $iconCls -}}
+            </a>
+        {{ else }}
+            <span class="w-10"></span>
+        {{- end }}
+    </nav>
+{{- end }}
