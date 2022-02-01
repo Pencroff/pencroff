@@ -5,12 +5,32 @@ title: "Pencroff"
 publishDir: "docs"
 DefaultContentLanguage: "en"                    # Default language for multilingual sites
 googleAnalytics: "UA-155361709-3"               # https://gohugo.io/templates/internal/#google-analytics
+summaryLength: 50
+paginate: 5
 
 build:
   writeStats: true
 
 params:
+  has_side:
+    - post
+    - categories
+    - tags
+  home:
+    recent_post_num: 4
+    recent_project_num: 3
+    recent_talk_num: 2
   links:
     twitter: "//twitter.com/Pencroff"
     github: "//github.com/Pencroff"
     linkedin: "//www.linkedin.com/in/sergey-daniloff"
+  side:
+    order:
+      - categories
+      - recent
+      - tags
+    category_counter: true
+    tag_counter: false
+    recent_count: 5
+    recent_date_format: "Jan 06"
+

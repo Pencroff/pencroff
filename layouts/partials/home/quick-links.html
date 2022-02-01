@@ -1,16 +1,22 @@
 <div id="to-page-top"></div>
 <section class="py-16">
-  {{ $project := .Site.GetPage "/projects" }}
+  {{ $post := .Site.GetPage "/post" }}
+  {{ $postCount := len ($post.Pages) }}
+  {{ $project := .Site.GetPage "/project" }}
   {{ $projectsCount := len ($project.Pages) }}
-  {{ $talk := .Site.GetPage "/talks" }}
+  {{ $talk := .Site.GetPage "/talk" }}
   {{ $talkCount := len ($talk.Pages) }}
-  {{ $sum := add $projectsCount $talkCount }}
+  {{ $sum := add $postCount $projectsCount }}
+  {{ $sum = add $sum $talkCount }}
   {{ $hasQuickLinks := gt $sum 0 }}
 
   {{- if $hasQuickLinks }}
   <hr class="mb-4 sm:mb-8">
 
   <div class="flex flex-row justify-center items-center text-stone-500">
+    {{- if gt $postCount 0 }}
+    <a class="sm:text-2xl hover:text-sky-600 m-4 sm:m-8" href="#posts">{{ $post.Title }}</a>
+    {{ end -}}
 
     {{- if gt $projectsCount 0 }}
     <a class="sm:text-2xl hover:text-sky-600 m-4 sm:m-8" href="#projects">{{ $project.Title }}</a>

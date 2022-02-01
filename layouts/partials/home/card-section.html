@@ -1,0 +1,33 @@
+{{$id := (index . 0)}}
+{{$allText := (index . 1)}}
+{{$link := (index . 2)}}
+{{$card := (index . 3)}}
+{{$ctx := (index . 4)}}
+{{$recent_num := (index . 5) | default 3}}
+{{$class := (index . 6)}}
+
+{{$section := $ctx.Site.GetPage $link}}
+
+{{- if gt (len $section.Pages) 0 }}
+<section id="{{$id}}" class="flex flex-col justify-center items-center">
+    <h2 class="mb-4 text-2xl sm:text-3xl font-bold text-stone-700 hover:underline">
+        <a href="{{$link}}">{{$section.Title}}</a>
+    </h2>
+    <div class="flex flex-col sm:flex-row justify-center items-stretch mb-4 sm:mb-8 w-full {{ with $class }}{{ . }}{{ end }}">
+        {{- if (eq $link "/post") }}
+            {{- range first $recent_num (sort $section.Pages "Params.date" "desc") }}
+                <span class="mb-4 lg:mb-8 lg:odd:mr-8 lg:basis-half">
+                    {{- partial $card . -}}
+                </span>
+            {{ end -}}
+        {{ else }}
+            {{- range first $recent_num (sort $section.Pages "Params.weight") }}
+                {{- partial $card . -}}
+            {{ end -}}
+        {{ end -}}
+
+    </div>
+    <a class="mb-4 sm:mb-8 hover:text-sky-600" href="{{$link}}">{{$allText}}</a>
+    {{- partial "back-to-top.html" . -}}
+</section>
+{{ end }}

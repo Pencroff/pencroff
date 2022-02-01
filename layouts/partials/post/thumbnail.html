@@ -1,0 +1,22 @@
+{{- if $thumbnail := .ctx.Params.thumbnail }}
+    {{- $class := .class }}
+    {{- $place := .place }}
+    {{- $place_lst := (slice "list" "post" "home") }}
+
+    {{- $visibility := .page.Site.Params.thumbnail.visibility | default $place_lst }}
+
+    {{- $valueType := printf "%T" $thumbnail -}}
+    {{- $isMap := in $valueType "map" -}}
+    {{- if $isMap }}
+        {{ $visibility = default $place_lst (default .page.Site.Params.thumbnail.visibility $thumbnail.visibility) }}
+        {{ $thumbnail = $thumbnail.src }}
+    {{- end }}
+
+
+
+    {{- if in $visibility $place }}
+        <figure class="flex justify-center items-center {{ with $class }}{{ . }} {{ end }}">
+            <img src="{{ $thumbnail | relURL }}" alt="{{ .page.Title }}">
+        </figure>
+    {{- end }}
+{{- end }}

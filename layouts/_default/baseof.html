@@ -6,10 +6,21 @@
         {{- if not .Params.NoHeader }}
             {{- partial "header.html" . -}}
         {{ end -}}
-        <main class="flex-1 mx-4 md:mx-12 lg:mx-24 mt-4 sm:mt-16">
-        {{- block "main" . }}{{- end }}
+        <main class="flex-1 mx-4 md:mx-8 lg:mx-12 xl:mx-24 mt-4 lg:mt-8 xl:mt-16">
+            {{ if in .Site.Params.has_side .Type  }}
+                <div class="flex flex-row flex-wrap md:flex-nowrap">
+                    <div class="basis-full md:basis-main flex flex-col justify-start items-center">
+                        {{- block "main" . }}{{- end }}
+                    </div>
+                    <div class="basis-full md:basis-side mt-4 md:mt-0 md:ml-8 flex flex-col justify-start items-center">
+                        {{ partial "side/all.html" . }}
+                    </div>
+                </div>
+            {{ else }}
+                {{- block "main" . }}{{- end }}
+            {{ end }}
         </main>
-<!--        {{- partial "dev-parameters.html" . -}}-->
+{{/*        {{- partial "dev-parameters.html" . -}}*/}}
         {{- if not .Params.NoFooter }}
             {{- partial "footer.html" . -}}
         {{ end -}}

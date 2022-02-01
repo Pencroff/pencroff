@@ -1,0 +1,11 @@
+{{ define "main" }}
+    {{- range .Paginator.Pages }}
+        <div class="mb-4 flex-1 w-full">
+            {{- partial "home/card-post.html" . }}
+        </div>
+
+    {{- end }}
+
+    {{- partial "paginator.html" (dict "paginator" .Paginator)
+    -}}
+{{ end }}

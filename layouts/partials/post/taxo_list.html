@@ -1,0 +1,22 @@
+{{ $cls := .class }}
+{{ $icon := .icon }}
+{{ $taxo := .taxo }}
+{{ $rel := .rel }}
+{{ $ctx := .ctx }}
+<div class="{{ with $cls }}{{ . }} {{ end }}flex flex-row items-center justify-start">
+    {{- partial $icon (dict "class" "inline-block w-5 h-5") -}}
+    {{- if ($ctx.Param $taxo) -}}
+        {{with ($ctx.Param $taxo)}}
+            {{- range $index, $taxoValue := . }}
+                {{- $url := urls.Parse ($taxoValue | urlize) -}}
+                {{- $path := $url.Path -}}
+                {{- with $ctx.GetPage (printf "/%s/%s" $taxo $path) }}
+                    {{- if gt $index 0 }}, {{ end -}}
+                    <a class="hover:text-sky-600 ml-1.5" href="{{ .RelPermalink }}" rel="{{$rel}}">{{ .Title }}</a>
+                {{- end }}
+            {{- end }}
+        {{end}}
+    {{else}}
+        <span class="ml-1 5">&mdash;</span>
+    {{- end -}}
+</div>
