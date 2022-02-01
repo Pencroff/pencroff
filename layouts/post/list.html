@@ -1,6 +1,9 @@
 {{ define "main" }}
     {{- range .Paginator.Pages }}
-        {{- partial "home/card-post.html" . }}
+        <div class="mb-4 last:mb-0 flex-1 w-full">
+            {{- partial "home/card-post.html" . }}
+        </div>
+
     {{- end }}
 
     {{- partial "paginator.html" (dict "paginator" .Paginator)

@@ -15,7 +15,9 @@
     <div class="flex flex-col sm:flex-row justify-center items-stretch mb-4 sm:mb-8 w-full {{ with $class }}{{ . }}{{ end }}">
         {{- if (eq $link "/post") }}
             {{- range first $recent_num (sort $section.Pages "Params.date" "desc") }}
-                {{- partial $card . -}}
+                <span class="mb-4 lg:mb-8 lg:odd:mr-8 lg:basis-half">
+                    {{- partial $card . -}}
+                </span>
             {{ end -}}
         {{ else }}
             {{- range first $recent_num (sort $section.Pages "Params.weight") }}
