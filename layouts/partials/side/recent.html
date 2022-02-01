@@ -1,7 +1,7 @@
 {{- $recent := (where .Site.RegularPages "Type" "post").ByDate.Reverse }}
 {{- $recent_num := (.Site.Params.side.recent_count | default 10) }}
 {{- $recent_date_format := (.Site.Params.side.recent_date_format | default "Jan 2006") }}
-<div class="container mb-4 px-4 py-2 bg-orange-50 rounded shadow-md">
+<div class="container mb-4 px-4 py-2 bg-orange-50 rounded shadow">
     {{- partial "side/side_header.html" (
     dict
     "class" "text-yellow-700 border-yellow-700 border-b-2 text-xl uppercase font-bold"

@@ -1,10 +1,10 @@
-<header class="text-stone-600 font-bold bg-orange-100">
+<header class="text-stone-600 font-bold bg-orange-50 shadow">
     <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
         <a class="flex title-font font-medium items-center text-stone-700 mb-4 md:mb-0" href="{{ .Site.Home.Permalink }}">
-            {{ partial "svg/atom-2.svg" (dict "class" "w-10 h-10")}}
-            <span class="ml-3 text-3xl ">{{ .Site.Title }}</span>
+            {{ partial "svg/atom-2.svg" (dict "class" "w-8 h-8 lg:w-10 lg:h-10")}}
+            <span class="ml-3 text-2xl lg:text-3xl ">{{ .Site.Title }}</span>
         </a>
-        <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+        <nav class="md:ml-auto flex flex-wrap items-center text-base lg:text-xl justify-center">
             {{ range .Site.Sections }}
             <a href="{{ .Permalink }}" class="mr-5 hover:text-stone-900">{{ .Title }}</a>
             {{ end }}

@@ -3,7 +3,7 @@
 {{- $iconCls := (dict "class" "w-10 h-10 p-1") -}}
 
 {{- if gt $paginator.TotalPages 1 }}
-    <nav class="flex flex-row justify-around items-center text-yellow-700 pt-4 pb-4">
+    <nav class="flex flex-row justify-around items-center text-yellow-700 pb-6 w-full">
         {{- if $paginator.HasPrev }}
             <a title="Previous page" href="{{ $paginator.Prev.URL }}"
                class="rounded hover:bg-yellow-700 hover:text-stone-50">
