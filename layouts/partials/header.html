@@ -6,7 +6,9 @@
         </a>
         <nav class="md:ml-auto flex flex-wrap items-center text-base lg:text-xl justify-center">
             {{ range .Site.Sections }}
-            <a href="{{ .Permalink }}" class="mr-5 hover:text-stone-900">{{ .Title }}</a>
+                {{- if gt (len .Pages) 0 }}
+                <a href="{{ .Permalink }}" class="mr-5 hover:text-stone-900">{{ .Title }}</a>
+                {{ end }}
             {{ end }}
         </nav>
     </div>

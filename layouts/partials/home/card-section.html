@@ -6,8 +6,9 @@
 {{$recent_num := (index . 5) | default 3}}
 {{$class := (index . 6)}}
 
-
 {{$section := $ctx.Site.GetPage $link}}
+
+{{- if gt (len $section.Pages) 0 }}
 <section id="{{$id}}" class="flex flex-col justify-center items-center">
     <h2 class="mb-4 text-2xl sm:text-3xl font-bold text-stone-700 hover:underline">
         <a href="{{$link}}">{{$section.Title}}</a>
@@ -29,3 +30,4 @@
     <a class="mb-4 sm:mb-8 hover:text-sky-600" href="{{$link}}">{{$allText}}</a>
     {{- partial "back-to-top.html" . -}}
 </section>
+{{ end }}
