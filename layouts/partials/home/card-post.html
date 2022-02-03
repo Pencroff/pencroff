@@ -3,10 +3,10 @@
         <a href="{{ .Permalink }}" class="hover:underline">{{ .Title }}</a>
     </h3>
     <div class="flex flex-row py-1 justify-between w-full">
-        {{- partial "post/date.html" (dict "class" "text-stone-500 text-base" "ctx" .) -}}
+        {{- partial "post/date.html" (dict "class" "text-stone-500 text-sm md:text-base" "ctx" .) -}}
         {{- partial "post/taxo_list.html" (
         dict
-        "class" "text-stone-500 text-base"
+        "class" "text-stone-500 text-sm md:text-base"
         "icon" "svg/triangle-square-circle.svg"
         "taxo" "categories"
         "rel" "category"
@@ -17,7 +17,7 @@
     <div class="flex flex-row py-1 justify-start w-full">
         {{- partial "post/taxo_list.html" (
         dict
-        "class" "text-stone-500 text-base"
+        "class" "text-stone-500 text-sm md:text-base"
         "icon" "svg/tag.svg"
         "taxo" "tags"
         "rel" "tag"

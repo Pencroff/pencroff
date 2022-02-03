@@ -1,0 +1,33 @@
+{{ define "main" }}
+    <section>
+        <article class="mb-4 lg:mb-8 xl:mb-16 prose prose-yellow lg:prose-lg prose-headings:text-yellow-700 prose-p:font-serif">
+            <h1 class="prose text-2xl lg:text-3xl mb-3 lg:mb-5">{{ .Title }}</h1>
+            <div class="flex flex-row py-1 justify-between w-full">
+                {{- partial "post/date.html" (dict "class" "text-stone-500 text-sm md:text-base" "ctx" .) -}}
+                {{- partial "post/taxo_list.html" (
+                dict
+                "class" "text-stone-500 text-sm md:text-base"
+                "icon" "svg/triangle-square-circle.svg"
+                "taxo" "categories"
+                "rel" "category"
+                "ctx" .
+                ) -}}
+            </div>
+
+            <div class="flex flex-row py-1 justify-start w-full">
+                {{- partial "post/taxo_list.html" (
+                dict
+                "class" "text-stone-500 text-sm md:text-base"
+                "icon" "svg/tag.svg"
+                "taxo" "tags"
+                "rel" "tag"
+                "ctx" .
+                ) -}}
+            </div>
+            <div class="flex flex-row justify-center w-full">
+            {{- partial "post/thumbnail.html" (dict "place" "post" "class" "basis-1/2 aspect-square" "ctx" .) -}}
+            </div>
+            {{ .Content }}
+        </article>
+    </section>
+{{ end }}
