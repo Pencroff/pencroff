@@ -13,6 +13,6 @@ As an engineer, I currently like to play with Golang, Python, and JavaScript or 
 <!--more-->
 Python is a king of data analysis and data science. We have to know what can be gained from data. 
 
-Golang surprised me by its restrictions for lot’s of popular things in other languages (no inheritance for example) and platform-native executable after compilation (including WebAssembly 😉).
+Golang surprised me by its restrictions for lots of popular things in other languages (no inheritance for example) and platform-native executable after compilation (including WebAssembly 😉).
 
 So please check the set of posts about my current [2048 project](/project/proj-2048/) implemented in golang and based on the [ebiten](https://ebiten.org/) game engine.
