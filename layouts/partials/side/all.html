@@ -1,5 +1,5 @@
 {{ $ctx := .}}
-<div class="flex flex-col">
+<div class="flex flex-col flex-1">
     {{- range $idx, $name := .Site.Params.side.order }}
         {{ if eq $name "categories" }}
             {{- partial "side/category_all.html" $ctx }}

@@ -11,9 +11,17 @@ paginate: 5
 build:
   writeStats: true
 
+markup:
+  highlight:
+    noClasses: false
+    lineNos: true
+    lineNumbersInTable: false
+
 params:
   has_side:
     - post
+    - project
+    - talk
     - categories
     - tags
   home:

@@ -4,7 +4,7 @@
     <body class="flex flex-col min-h-screen">
 <!--        {{- partial "dev-size-indicator.html" . -}}-->
         {{- if not .Params.NoHeader }}
-            {{- partial "header.html" . -}}
+            {{- partialCached "header.html" . -}}
         {{ end -}}
         <main class="flex-1 mx-4 md:mx-8 lg:mx-12 xl:mx-24 mt-4 lg:mt-8 xl:mt-16">
             {{ if in .Site.Params.has_side .Type  }}
@@ -12,8 +12,8 @@
                     <div class="basis-full md:basis-main flex flex-col justify-start items-center">
                         {{- block "main" . }}{{- end }}
                     </div>
-                    <div class="basis-full md:basis-side mt-4 md:mt-0 md:ml-8 flex flex-col justify-start items-center">
-                        {{ partial "side/all.html" . }}
+                    <div class="basis-full md:basis-side mt-4 md:mt-0 md:ml-8 flex flex-col justify-start items-center flex-1">
+                        {{ partialCached "side/all.html" . }}
                     </div>
                 </div>
             {{ else }}
@@ -22,7 +22,7 @@
         </main>
 {{/*        {{- partial "dev-parameters.html" . -}}*/}}
         {{- if not .Params.NoFooter }}
-            {{- partial "footer.html" . -}}
+            {{- partialCached "footer.html" . -}}
         {{ end -}}
     </body>
 </html>

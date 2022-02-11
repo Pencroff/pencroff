@@ -5,6 +5,7 @@
   "scripts": {
     "tailwindcss": "tailwindcss --help",
     "srv": "serve --listen=3333 ./docs",
+    "perf-site": "hugo serve --gc --disableFastRender --port=1515 --templateMetrics --templateMetricsHints",
     "dev-site": "hugo serve --gc",
     "dev-css": "npm run env NODE_ENV=development && tailwindcss --postcss ./postcss.config.js --input ./assets/css/styles.css --output ./assets/main.css --watch",
     "build-site": "hugo --minify --gc",

@@ -4,8 +4,8 @@
 {{ $rel := .rel }}
 {{ $ctx := .ctx }}
 <div class="{{ with $cls }}{{ . }} {{ end }}flex flex-row items-center justify-start">
-    {{- partial $icon (dict "class" "inline-block w-5 h-5") -}}
     {{- if ($ctx.Param $taxo) -}}
+        {{- partial $icon (dict "class" "inline-block w-5 h-5") -}}
         {{with ($ctx.Param $taxo)}}
             {{- range $index, $taxoValue := . }}
                 {{- $url := urls.Parse ($taxoValue | urlize) -}}
@@ -16,7 +16,5 @@
                 {{- end }}
             {{- end }}
         {{end}}
-    {{else}}
-        <span class="ml-1 5">&mdash;</span>
     {{- end -}}
 </div>
