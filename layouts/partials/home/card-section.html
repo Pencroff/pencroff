@@ -16,9 +16,10 @@
     <div class="flex flex-col sm:flex-row justify-center items-stretch mb-4 sm:mb-8 w-full {{ with $class }}{{ . }}{{ end }}">
         {{- if (eq $link "/post") }}
             {{- range first $recent_num (sort $section.Pages "Params.date" "desc") }}
-                <span class="mb-4 lg:mb-8 lg:odd:mr-8 lg:basis-half">
-                    {{- partial $card . -}}
-                </span>
+                {{- partial $card . -}}
+{{/*                <span class="mb-4 lg:mb-8 lg:odd:mr-8 lg:basis-half flex items-stretch">*/}}
+{{/*                    */}}
+{{/*                </span>*/}}
             {{ end -}}
         {{ else }}
             {{- range first $recent_num (sort $section.Pages "Params.weight") }}
@@ -28,6 +29,6 @@
 
     </div>
     <a class="mb-4 sm:mb-8 hover:text-sky-600" href="{{$link}}">{{$allText}}</a>
-    {{- partial "back-to-top.html" . -}}
+    {{- partialCached "back-to-top.html" . -}}
 </section>
 {{ end }}

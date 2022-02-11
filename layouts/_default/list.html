@@ -1,19 +1,35 @@
 {{ define "main" }}
-{{ range .Pages }}
-    <article class="px-6 mx-auto mb-16 prose prose-stone prose-headings:text-blue-700 prose-p:font-serif justify-self-center sm:px-4 md:px-0 lg:prose-lg">
-        <h1>{{ .Title }}</h1>
-        <figure>
-            {{ with .Resources.ByType "image" }}
-            {{ range first 1 (sort . "Params.weight") }}
-            <img src="{{ .Permalink }}" alt ="{{ .Name }}">
-            {{ end }}
-            {{ end }}
-        </figure>
-        {{ .Description | markdownify }}
-        <p class="text-right">
-            <a href="{{ .Permalink }}">More details</a>
-        </p>
-
-    </article>
-{{ end }}
+    {{ $prefix := "" }}
+    {{ $type := .Type }}
+    {{- with (eq $type "categories") }}
+        {{ $prefix = "Category:&nbsp;" }}
+    {{ end -}}
+    {{- with (eq $type "tags") }}
+        {{ $prefix = "Tag:&nbsp;" }}
+    {{ end -}}
+    <main role="main" class="mb-4 lg:mb-8 w-full">
+        {{- with .Title }}
+            <header class="mb-4">
+                <h1 class="text-yellow-700 text-3xl font-bold">{{$prefix | safeHTML}}{{ . }}</h1>
+            </header>
+        {{- end }}
+        {{- with .Content }}
+            <div class="prose prose-yellow mb-4">
+                {{ . }}
+            </div>
+        {{- end }}
+        {{- range .Paginator.Pages }}
+            {{ $contentType := .Type }}
+            {{- if (eq $contentType "post") }}
+                {{ partial "card/post.html" . }}
+            {{ end -}}
+            {{- if (eq $contentType "project") }}
+                {{ partial "card/project.html" . }}
+            {{ end -}}
+            {{- if (eq $contentType "talk") }}
+                {{ partial "card/talk.html" . }}
+            {{ end -}}
+        {{- end }}
+    </main>
+    {{ partial "paginator.html" (dict "paginator" .Paginator) }}
 {{ end }}

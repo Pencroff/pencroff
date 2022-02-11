@@ -18,9 +18,9 @@
     </div>
 
     {{- partial "home/quick-links.html" . -}}
-    {{- partial "home/card-section.html" (slice "posts" "All posts" "/post" "home/card-post.html" . (.Site.Param "home.recent_post_num") "flex-wrap") -}}
-    {{- partial "home/card-section.html" (slice "projects" "All projects" "/project" "home/card-project.html" . (.Site.Param "home.recent_project_num")) -}}
-    {{- partial "home/card-section.html" (slice "talks" "All talks" "/talk" "home/card-talk.html" . (.Site.Param "home.recent_talk_num")) -}}
+    {{- partial "home/card-section.html" (slice "posts" "All posts" "/post" "card/post.html" . (.Site.Param "home.recent_post_num") "flex-wrap") -}}
+    {{- partial "home/card-section.html" (slice "projects" "All projects" "/project" "card/project.html" . (.Site.Param "home.recent_project_num")) -}}
+    {{- partial "home/card-section.html" (slice "talks" "All talks" "/talk" "card/talk.html" . (.Site.Param "home.recent_talk_num")) -}}
 
 </section>
 

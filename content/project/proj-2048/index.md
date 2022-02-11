@@ -1,6 +1,8 @@
 ---
 title: "Project 2048"
 description: "Make different AI agents for 2048 game"
+categories:
+- "Proj 2048"
 weight: 240
 resources:
   - src: auto-play-proj2048.min.png
