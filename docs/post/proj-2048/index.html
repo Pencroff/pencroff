@@ -62,51 +62,110 @@ Go lang. The <a href=https://github.com/fogleman/gg#examples>gg</a> library help
 <p>I faced an issue to use pointers as a field type. To quickly solve it - wrapped by extra tier check code example below. Workaround highlighted.</p>
 <p>It could be limitation of used ECS library (it based on reflection) or incorrect usage on my side 😀</p>
 </blockquote>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=ln> 1</span><span class=c1>// Tile component
-</span><span class=ln> 2</span><span class=c1></span><span class=kd>type</span> <span class=nx>TileProp</span> <span class=kd>struct</span> <span class=p>{</span>
-<span class=ln> 3</span>	<span class=nx>Value</span>       <span class=kt>int</span>
-<span class=ln> 4</span>	<span class=nx>Position</span>    <span class=nx>image</span><span class=p>.</span><span class=nx>Point</span>
-<span class=ln> 5</span>	<span class=nx>EndPosition</span> <span class=nx>image</span><span class=p>.</span><span class=nx>Point</span>
-<span class=ln> 6</span>	<span class=nx>Speed</span>       <span class=nx>image</span><span class=p>.</span><span class=nx>Point</span>
-<span class=ln> 7</span>	<span class=nx>IsMoving</span>    <span class=kt>bool</span>
-<span class=ln> 8</span>	<span class=nx>Removed</span>     <span class=kt>bool</span>
-<span class=ln> 9</span>	<span class=nx>Sprite</span>      <span class=o>*</span><span class=nx>ebiten</span><span class=p>.</span><span class=nx>Image</span>
-<span class=ln>10</span><span class=p>}</span>
-<span class=ln>11</span>
-<span class=ln>12</span><span class=kd>type</span> <span class=nx>TilePropWrap</span> <span class=kd>struct</span> <span class=p>{</span>
-<span class=hl><span class=ln>13</span>	<span class=nx>Ptr</span> <span class=o>*</span><span class=nx>TileProp</span>
-</span><span class=ln>14</span><span class=p>}</span>
-<span class=ln>15</span>
-<span class=ln>16</span><span class=c1>// Tile entity
-</span><span class=ln>17</span><span class=c1></span><span class=kd>type</span> <span class=nx>Tile</span> <span class=kd>struct</span> <span class=p>{</span>
-<span class=ln>18</span>	<span class=nx>component</span><span class=p>.</span><span class=nx>TilePropWrap</span>
-<span class=ln>19</span><span class=p>}</span>
-</code></pre></div><h3 id=agent-interface>Agent interface</h3>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=ln> 1</span><span class=kd>type</span> <span class=nx>Agent</span> <span class=kd>interface</span> <span class=p>{</span>
-<span class=ln> 2</span>	<span class=nf>GetId</span><span class=p>()</span> <span class=kt>string</span>
-<span class=ln> 3</span>	<span class=nf>GetName</span><span class=p>()</span> <span class=kt>string</span>
-<span class=ln> 4</span>	<span class=nf>IsManual</span><span class=p>()</span> <span class=kt>bool</span>
-<span class=ln> 5</span>	<span class=nf>GetGameId</span><span class=p>()</span> <span class=kt>int64</span>
-<span class=ln> 6</span>	<span class=nf>GetGameSeed</span><span class=p>()</span> <span class=kt>int64</span>
-<span class=ln> 7</span>
-<span class=hl><span class=ln> 8</span>	<span class=nf>MakeMove</span><span class=p>(</span><span class=nx>step</span> <span class=kt>int</span><span class=p>,</span> <span class=nx>score</span> <span class=kt>int</span><span class=p>,</span> <span class=nx>noMove</span> <span class=kt>bool</span><span class=p>,</span> <span class=nx>valueList</span> <span class=p>[]</span><span class=kt>int</span><span class=p>)</span> <span class=nx>common</span><span class=p>.</span><span class=nx>Direction</span>
-</span><span class=ln> 9</span>
-<span class=ln>10</span>	<span class=nf>GameFinished</span><span class=p>(</span><span class=nx>step</span> <span class=kt>int</span><span class=p>,</span> <span class=nx>score</span> <span class=kt>int</span><span class=p>,</span> <span class=nx>noMove</span> <span class=kt>bool</span><span class=p>,</span> <span class=nx>valueList</span> <span class=p>[]</span><span class=kt>int</span><span class=p>,</span> <span class=nx>d</span> <span class=nx>common</span><span class=p>.</span><span class=nx>Direction</span><span class=p>)</span>
-<span class=ln>11</span>
-<span class=ln>12</span>	<span class=nf>LogStep</span><span class=p>(</span><span class=nx>step</span> <span class=kt>int</span><span class=p>,</span> <span class=nx>score</span> <span class=kt>int</span><span class=p>,</span> <span class=nx>noMove</span> <span class=kt>bool</span><span class=p>,</span> <span class=nx>valueList</span> <span class=p>[]</span><span class=kt>int</span><span class=p>,</span> <span class=nx>d</span> <span class=nx>common</span><span class=p>.</span><span class=nx>Direction</span><span class=p>)</span> <span class=kt>error</span>
-<span class=ln>13</span><span class=p>}</span>
-</code></pre></div><p>The agent has to decide about next move base on current game state <code>valueList</code> and some other values such as <code>noMove</code> flag (<code>true</code> if was not possible to move by previous try, i.e. full board but collapsible vertically, but tried to move horizontally) or game <code>step</code> number.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=hl><span class=lnt>13
+</span></span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=c1>// Tile component
+</span><span class=c1></span><span class=kd>type</span> <span class=nx>TileProp</span> <span class=kd>struct</span> <span class=p>{</span>
+	<span class=nx>Value</span>       <span class=kt>int</span>
+	<span class=nx>Position</span>    <span class=nx>image</span><span class=p>.</span><span class=nx>Point</span>
+	<span class=nx>EndPosition</span> <span class=nx>image</span><span class=p>.</span><span class=nx>Point</span>
+	<span class=nx>Speed</span>       <span class=nx>image</span><span class=p>.</span><span class=nx>Point</span>
+	<span class=nx>IsMoving</span>    <span class=kt>bool</span>
+	<span class=nx>Removed</span>     <span class=kt>bool</span>
+	<span class=nx>Sprite</span>      <span class=o>*</span><span class=nx>ebiten</span><span class=p>.</span><span class=nx>Image</span>
+<span class=p>}</span>
+
+<span class=kd>type</span> <span class=nx>TilePropWrap</span> <span class=kd>struct</span> <span class=p>{</span>
+<span class=hl>	<span class=nx>Ptr</span> <span class=o>*</span><span class=nx>TileProp</span>
+</span><span class=p>}</span>
+
+<span class=c1>// Tile entity
+</span><span class=c1></span><span class=kd>type</span> <span class=nx>Tile</span> <span class=kd>struct</span> <span class=p>{</span>
+	<span class=nx>component</span><span class=p>.</span><span class=nx>TilePropWrap</span>
+<span class=p>}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=agent-interface>Agent interface</h3>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=hl><span class=lnt> 8
+</span></span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kd>type</span> <span class=nx>Agent</span> <span class=kd>interface</span> <span class=p>{</span>
+	<span class=nf>GetId</span><span class=p>()</span> <span class=kt>string</span>
+	<span class=nf>GetName</span><span class=p>()</span> <span class=kt>string</span>
+	<span class=nf>IsManual</span><span class=p>()</span> <span class=kt>bool</span>
+	<span class=nf>GetGameId</span><span class=p>()</span> <span class=kt>int64</span>
+	<span class=nf>GetGameSeed</span><span class=p>()</span> <span class=kt>int64</span>
+
+<span class=hl>	<span class=nf>MakeMove</span><span class=p>(</span><span class=nx>step</span> <span class=kt>int</span><span class=p>,</span> <span class=nx>score</span> <span class=kt>int</span><span class=p>,</span> <span class=nx>noMove</span> <span class=kt>bool</span><span class=p>,</span> <span class=nx>valueList</span> <span class=p>[]</span><span class=kt>int</span><span class=p>)</span> <span class=nx>common</span><span class=p>.</span><span class=nx>Direction</span>
+</span>
+	<span class=nf>GameFinished</span><span class=p>(</span><span class=nx>step</span> <span class=kt>int</span><span class=p>,</span> <span class=nx>score</span> <span class=kt>int</span><span class=p>,</span> <span class=nx>noMove</span> <span class=kt>bool</span><span class=p>,</span> <span class=nx>valueList</span> <span class=p>[]</span><span class=kt>int</span><span class=p>,</span> <span class=nx>d</span> <span class=nx>common</span><span class=p>.</span><span class=nx>Direction</span><span class=p>)</span>
+
+	<span class=nf>LogStep</span><span class=p>(</span><span class=nx>step</span> <span class=kt>int</span><span class=p>,</span> <span class=nx>score</span> <span class=kt>int</span><span class=p>,</span> <span class=nx>noMove</span> <span class=kt>bool</span><span class=p>,</span> <span class=nx>valueList</span> <span class=p>[]</span><span class=kt>int</span><span class=p>,</span> <span class=nx>d</span> <span class=nx>common</span><span class=p>.</span><span class=nx>Direction</span><span class=p>)</span> <span class=kt>error</span>
+<span class=p>}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>The agent has to decide about next move base on current game state <code>valueList</code> and some other values such as <code>noMove</code> flag (<code>true</code> if was not possible to move by previous try, i.e. full board but collapsible vertically, but tried to move horizontally) or game <code>step</code> number.</p>
 <p>The direction is just a string typed as &ldquo;Direction&rdquo;</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=ln>1</span><span class=kd>type</span> <span class=nx>Direction</span> <span class=kt>string</span>
-<span class=ln>2</span>
-<span class=ln>3</span><span class=kd>const</span> <span class=p>(</span>
-<span class=ln>4</span>	<span class=nx>NoDirection</span> <span class=nx>Direction</span> <span class=p>=</span> <span class=s>&#34;no_direction&#34;</span>
-<span class=ln>5</span>	<span class=nx>Up</span>                    <span class=p>=</span> <span class=s>&#34;up&#34;</span>
-<span class=ln>6</span>	<span class=nx>Right</span>                 <span class=p>=</span> <span class=s>&#34;right&#34;</span>
-<span class=ln>7</span>	<span class=nx>Down</span>                  <span class=p>=</span> <span class=s>&#34;down&#34;</span>
-<span class=ln>8</span>	<span class=nx>Left</span>                  <span class=p>=</span> <span class=s>&#34;left&#34;</span>
-<span class=ln>9</span><span class=p>)</span>
-</code></pre></div><h3 id=summary>Summary</h3>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=kd>type</span> <span class=nx>Direction</span> <span class=kt>string</span>
+
+<span class=kd>const</span> <span class=p>(</span>
+	<span class=nx>NoDirection</span> <span class=nx>Direction</span> <span class=p>=</span> <span class=s>&#34;no_direction&#34;</span>
+	<span class=nx>Up</span>                    <span class=p>=</span> <span class=s>&#34;up&#34;</span>
+	<span class=nx>Right</span>                 <span class=p>=</span> <span class=s>&#34;right&#34;</span>
+	<span class=nx>Down</span>                  <span class=p>=</span> <span class=s>&#34;down&#34;</span>
+	<span class=nx>Left</span>                  <span class=p>=</span> <span class=s>&#34;left&#34;</span>
+<span class=p>)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=summary>Summary</h3>
 <p>Please try to play on the <a href=/project/proj-2048/>project page</a> (WebAssembly) or check how far agents' progress can be.</p>
 </article>
 </section>
@@ -119,6 +178,10 @@ Categories
 </h4>
 <ul class="text-stone-700 text-base divide-y divide-dashed divide-yellow-700/50">
 <li class="flex flex-row justify-between items-center hover:text-sky-600 py-2 px-1">
+<a href=/categories/fluky/>fluky</a>&nbsp;
+<span class="text-xs rounded font-mono p-1 bg-yellow-700 text-stone-50">1</span>
+</li>
+<li class="flex flex-row justify-between items-center hover:text-sky-600 py-2 px-1">
 <a href=/categories/proj-2048/>Proj 2048</a>&nbsp;
 <span class="text-xs rounded font-mono p-1 bg-yellow-700 text-stone-50">2</span>
 </li>
@@ -129,6 +192,14 @@ Categories
 Recent posts
 </h4>
 <ul class="text-stone-700 text-base divide-y divide-dashed divide-yellow-700/50">
+<li class="hover:text-sky-600 py-2">
+<a class="flex flex-col items-start" href=/post/fluky-lib/>
+<span>Fluky - random number generator library</span>
+<span class=self-end>
+Apr 22
+</span>
+</a>
+</li>
 <li class="hover:text-sky-600 py-2">
 <a class="flex flex-col items-start" href=/post/proj-2048/>
 <span>Proj 2048</span>
@@ -157,6 +228,7 @@ Tags
 <a class="py-0.5 px-2 mr-1 mt-1 hover:text-sky-100 hover:bg-yellow-700 border-yellow-700 border rounded-lg" href=/tags/ecs/ title=ECS>ECS</a>
 <a class="py-0.5 px-2 mr-1 mt-1 hover:text-sky-100 hover:bg-yellow-700 border-yellow-700 border rounded-lg" href=/tags/gaming-agent/ title="Gaming agent">Gaming agent</a>
 <a class="py-0.5 px-2 mr-1 mt-1 hover:text-sky-100 hover:bg-yellow-700 border-yellow-700 border rounded-lg" href=/tags/golang/ title=Golang>Golang</a>
+<a class="py-0.5 px-2 mr-1 mt-1 hover:text-sky-100 hover:bg-yellow-700 border-yellow-700 border rounded-lg" href=/tags/rng/ title=RNG>RNG</a>
 </div>
 </div>
 </div>

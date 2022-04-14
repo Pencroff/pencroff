@@ -37,9 +37,13 @@
       "section",
       "span",
       "strong",
+      "sup",
       "svg",
+      "table",
+      "td",
       "time",
       "title",
+      "tr",
       "ul"
     ],
     "classes": [
@@ -125,6 +129,8 @@
       "lg:text-3xl",
       "lg:text-xl",
       "lg:w-10",
+      "lntable",
+      "lntd",
       "m-2",
       "m-4",
       "mb-16",

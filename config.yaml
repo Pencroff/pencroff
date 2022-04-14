@@ -12,10 +12,13 @@ build:
   writeStats: true
 
 markup:
+  goldmark:
+    renderer:
+      unsafe: true
   highlight:
     noClasses: false
     lineNos: true
-    lineNumbersInTable: false
+    lineNumbersInTable: true
 
 params:
   has_side:
