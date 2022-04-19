@@ -45,13 +45,26 @@ It has good performance and [statistical background][8]. Also mentioned as a goo
 
 Also, it's important to mention the Small Prng and Pcg64 are passing [113 tests][3] and have just 1 weak test with no failings.  
 
+### How to test Random Number Generator
 
-[1]: https://github.com/Pencroff/fluky
-[2]: https://en.wikipedia.org/wiki/List_of_random_number_generators
-[3]: https://github.com/Pencroff/fluky#dieharder-summary
-[4]: https://github.com/Pencroff/fluky#benchmark
-[5]: https://burtleburtle.net/bob/rand/smallprng.html
-[6]: https://www.wolframalpha.com/input?i=2%5E126%2F2.327%C3%9710%5E-9+seconds
-[7]: https://www.pcg-random.org/
-[8]: https://www.pcg-random.org/paper.html
-[9]: https://en.wikipedia.org/wiki/Mersenne_Twister#Alternatives
+For testing random number generators could be used different cli applications to check statistics of generated random numbers on relatively large data set. For example [dieharder][11] requires approximately 229 GB of data for 114 different tests ([more info][16]). Other projects like [NIST][12] used 15 different [statistical tests][13].
+
+If you need more info about testing RNG please check related [StackOverflow][14] or [StackExchange][15] questions.
+
+
+[1]: //github.com/Pencroff/fluky
+[2]: //en.wikipedia.org/wiki/List_of_random_number_generators
+[3]: //github.com/Pencroff/fluky#dieharder-summary
+[4]: //github.com/Pencroff/fluky#benchmark
+[5]: //burtleburtle.net/bob/rand/smallprng.html
+[6]: //www.wolframalpha.com/input?i=2%5E126%2F2.327%C3%9710%5E-9+seconds
+[7]: //www.pcg-random.org/
+[8]: //www.pcg-random.org/paper.html
+[9]: //en.wikipedia.org/wiki/Mersenne_Twister#Alternatives
+[10]: //linux.die.net/man/1/dieharder
+[11]: //webhome.phy.duke.edu/~rgb/General/dieharder.php
+[12]: //csrc.nist.gov/projects/Random-Bit-Generation
+[13]: //github.com/GINARTeam/NIST-statistical-test
+[14]: //stackoverflow.com/questions/2130621/how-to-test-a-random-generator
+[15]: //stats.stackexchange.com/questions/352076/nist-randomness-test-testu01-dieharder
+[16]: //crypto.stackexchange.com/questions/90076/how-to-compute-the-dataset-size-required-by-dieharder-tests
