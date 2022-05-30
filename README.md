@@ -1,6 +1,6 @@
 # Pencroff.com
 
-Hi. I am Sergey.
+Hi. I am Sergii.
 
 This is repository for my portfolio / CV web-site.
 
