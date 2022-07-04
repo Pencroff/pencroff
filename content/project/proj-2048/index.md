@@ -8,6 +8,8 @@ resources:
   - src: auto-play-proj2048.min.png
     params:
       weight: -100  
+aliases:
+  - /projects/proj-2048/
 ---
 
 Play yourself or see how AI can move tiles across board.

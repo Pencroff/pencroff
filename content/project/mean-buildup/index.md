@@ -4,9 +4,11 @@ description: "I mentored Angular BuildUp in Dublin. Attendees did some training
 with AngularJs (Yes, that old framework 😉)"
 weight: 970
 resources:
-    - src: MEAN.png
-      params:
-          weight: -100
+  - src: MEAN.png
+    params:
+      weight: -100
+aliases:
+  - /projects/mean-buildup/
 ---
 
 I mentored Angular BuildUp in Dublin. Attendees did some training

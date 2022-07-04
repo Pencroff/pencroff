@@ -3,9 +3,11 @@ title: "Kea config"
 description: "Configuration manager for Node.js applications with perfect performance and without dependencies."
 weight: 980
 resources:
-    - src: kea.png
-      params:
-          weight: -100
+  - src: kea.png
+    params:
+      weight: -100
+aliases:
+  - /projects/kea-config/
 ---
 
 Configuration manager for Node.js applications with perfect performance and without dependencies.

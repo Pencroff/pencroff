@@ -8,6 +8,8 @@ resources:
   - src: fluky-logo.min.png
     params:
       weight: -100  
+aliases:
+  - /projects/fluky/
 ---
 
 Few Random Number Generator (RNG) implementations. Tested by [dieharder][1] tests.
