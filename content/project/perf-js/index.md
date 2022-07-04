@@ -3,9 +3,11 @@ title: "PerfJS"
 description: "Compare performance different JavaScript approaches in your browser."
 weight: 500
 resources:
-    - src: perf.jpg
-      params:
-          weight: -100
+  - src: perf.jpg
+    params:
+      weight: -100
+aliases:
+  - /projects/perf-js/
 ---
 
 Compare performance different JavaScript approaches in your browser.

@@ -4,9 +4,11 @@ description: "Fast [better-sqlite3](//github.com/JoshuaWise/better-sqlite3) driv
 Very useful for prototyping and experiments on local machine."
 weight: 1010
 resources:
-    - src: typeorm-sqlite-driver.png
-      params:
-          weight: -100
+  - src: typeorm-sqlite-driver.png
+    params:
+      weight: -100
+aliases:
+  - /projects/ts-algorithms/
 ---
 
 > Please make sure Typeorm already has `better-sqlite3` as internal driver. Please use it instead of this implementation.
