@@ -125,3 +125,6 @@ dist
 .idea/
 origin_docs/
 zzz/
+
+/assets/main.css
+/.hugo_build.lock
