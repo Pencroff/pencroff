@@ -17,5 +17,5 @@
     </div>
 </footer>
 
-{{ $mainJs := resources.Get "js/script.ts" | js.Build "script.ts" | minify | fingerprint }}
+{{ $mainJs := resources.Get "js/script.ts" | js.Build "script.js" | minify | fingerprint }}
 <script src="{{ $mainJs.Permalink }}" integrity="{{ $mainJs.Data.Integrity }}"></script>
