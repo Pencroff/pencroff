@@ -2,7 +2,7 @@
 ---
 date: "2022-04-14"
 title: "Fluky - random number generator library"
-thumbnail: "img/blog/fluky-lib/fluky-logo.min.png"
+thumbnail: "img/blog/fluky-lib/fluky-color.min.png"
 categories:
 - "fluky"
 tags:
@@ -30,16 +30,16 @@ The simplest statistical visualization - just draw a million of generated number
 
 The worst as you can imagine appear ZX Spectrum LCG. It operates just 2<sup>16</sup>(65536 values) and visualization has not more than 128x128 pixels.
 
-![ZX81 RNG](https://raw.githubusercontent.com/Pencroff/fluky/main/out/zx81_out.png)
+![ZX81 RNG](https://raw.githubusercontent.com/Pencroff/fluky/main/experiments/out/zx81_out.png)
 
 The most performant and with perfect quality (by [dieharder][3] test and [benchmarks][4]) is [Small Prng][5].
 The cycle length is expected to be about 2<sup>126</sup> results. On my laptop where single number generated in 2.327 ns/op it would take 1.158×10<sup>39</sup> years ([ref][6]). 
 
-![Small Prng](https://raw.githubusercontent.com/Pencroff/fluky/main/out/small_prng_out.png)
+![Small Prng](https://raw.githubusercontent.com/Pencroff/fluky/main/experiments/out/small_prng_out.png)
 
 A flagship RNG in current experiment I would consider [Pcg64][7]
 
-![Pcg64](https://raw.githubusercontent.com/Pencroff/fluky/main/out/pcg64_out.png)
+![Pcg64](https://raw.githubusercontent.com/Pencroff/fluky/main/experiments/out/pcg64_out.png)
 
 It has good performance and [statistical background][8]. Also mentioned as a good alternative of [Mersenne Twister RNG][9].
 
