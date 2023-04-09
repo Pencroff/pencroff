@@ -5,7 +5,7 @@ title: "First post"
 thumbnail: "img/blog/first-post/monster-hi.min.png"
 ---
 
-Hi. My name is Sergey. Recently I decided to create a blog and note interesting things.
+Hi. My name is Sergii. Recently I decided to create a blog and note interesting things.
 
 Here you go - my very first post.
 

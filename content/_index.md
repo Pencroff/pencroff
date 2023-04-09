@@ -1,7 +1,7 @@
 ---
-title: Hi. I'm Sergey
+title: Hi. I'm Sergii
 subtitle: Welcome to my personal page
-description: Personal page - Sergey Danilov / @Pencroff
+description: Personal page - Sergii Danilov / @Pencroff
 keywords:
     - main page
     - pencroff's projects
