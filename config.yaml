@@ -33,7 +33,7 @@ params:
     recent_project_num: 3
     recent_talk_num: 2
   links:
-    twitter: "//twitter.com/Pencroff"
+#    twitter: "//twitter.com/Pencroff"
     github: "//github.com/Pencroff"
     linkedin: "//www.linkedin.com/in/sergiidanilov/"
   side:
