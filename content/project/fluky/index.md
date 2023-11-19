@@ -5,7 +5,7 @@ categories:
 - "fluky"
 weight: 230
 resources:
-  - src: fluky-color.min.png
+  - src: fluky-poster_bg.min.png
     params:
       weight: -100  
 aliases:

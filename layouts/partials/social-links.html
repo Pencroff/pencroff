@@ -2,13 +2,19 @@
 {{$hoverCls := (index . 1)}}
 {{$ctx := (index . 2)}}
 <span class="inline-flex sm:mt-0 mt-2 justify-center">
+{{- if $ctx.Site.Params.links.linkedin }}
   <a class="{{$colorCls}} {{$hoverCls}}" href="{{$ctx.Site.Params.links.linkedin}}" target="_blank">
       {{- partial "svg/linkedin.svg" (dict "class" "w-8 h-8") -}}
   </a>
+{{ end -}}
+{{- if $ctx.Site.Params.links.github }}
   <a class="{{$colorCls}} {{$hoverCls}} ml-3" href="{{$ctx.Site.Params.links.github}}" target="_blank">
       {{- partial "svg/github.svg" (dict "class" "w-8 h-8") -}}
   </a>
+{{ end -}}
+{{- if $ctx.Site.Params.links.twitter }}
   <a class="{{$colorCls}} {{$hoverCls}} ml-3" href="{{$ctx.Site.Params.links.twitter}}" target="_blank">
       {{- partial "svg/twitter.svg" (dict "class" "w-8 h-8") -}}
   </a>
+{{ end -}}
 </span>
