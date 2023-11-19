@@ -1,11 +1,11 @@
 ---
-title: "CCID: Chrono Chaos ID Generator"
+title: "CCID: Chrono Chaos ID"
 description: "Time-based ID generator family with size verity and fingerprint option"
 categories:
 - "ccid"
 weight: 230
 resources:
-  - src: logo_cube.jpeg
+  - src: chrono_chaos_id.min.png
     params:
       weight: -100  
 aliases:

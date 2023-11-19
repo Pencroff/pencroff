@@ -2,7 +2,7 @@
 ---
 date: "2022-04-14"
 title: "Fluky - random number generator library"
-thumbnail: "img/blog/fluky-lib/fluky-poster.min.png"
+thumbnail: "img/blog/fluky-lib/fluky-poster_bg.min.png"
 categories:
 - "fluky"
 tags:
