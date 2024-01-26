@@ -20,5 +20,5 @@ It offers ID sizes ranging from 64 to 160 bits, making it a variable-sized finge
 serialization and parsing formats such as binary, hex, base32, and base62 (15% smaller than base32) for
 seamless usage in any solution.
 
-[Tech details on GitHub](https://github.com/Pencroff/ccid/)
-
+* [Tech details on GitHub](https://github.com/Pencroff/ccid/)
+* [Go implementation repo](https://github.com/Pencroff/ccid_go/)
