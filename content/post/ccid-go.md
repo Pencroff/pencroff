@@ -1,7 +1,7 @@
 ---
 date: "2024-01-25"
 title: "Unveiling the Power of CCID in Go: A Comprehensive Guide"
-thumbnail: "img/blog/ccid-go/logo.min.png"
+thumbnail: "img/blog/ccid-go/exploring_CCID.min.jpg"
 categories:
 - "ccid"
 tags:
