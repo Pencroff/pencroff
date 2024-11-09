@@ -1,1 +1,0 @@
-(()=>{localStorage.theme==="dark"||!("theme"in localStorage)&&window.matchMedia("(prefers-color-scheme: dark)").matches?document.documentElement.classList.add("dark"):document.documentElement.classList.remove("dark");function e(e){console.log("Msg:",e)}e("Hi!")})()
