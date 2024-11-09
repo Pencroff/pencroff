@@ -9,6 +9,4 @@ keywords:
 NoHeader: true
 ---
 
-Trust me I am an engineer.
-
-:)
+Innovator by Nature | 20+ years of pushing boundaries
